@@ -12,7 +12,7 @@ namespace Entities.Concrete
         public int TaxAdministrationId { get; set; }
         public int PaymentPlanId { get; set; }
         public int BusinessTransactionId { get; set; }
-        public int ValueAddedTaxNumber { get; set; }
+        public int VatNumber { get; set; }
         public int DiscountRate { get; set; }
         public int CarrierId { get; set; }
         public string IdentityNumber { get; set; }
