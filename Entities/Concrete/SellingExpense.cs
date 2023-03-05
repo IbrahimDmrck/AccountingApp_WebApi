@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class Case
+    public class SellingExpense             
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
+        public int Id { get; set; }
         public string Description { get; set; }
         public bool Status { get; set; }
-        public string Address { get; set; }
-
-        public string Workplace { get; set; }
+        public int VatRate { get; set; }
+        public int UnitSetId { get; set; }
     }
 }
