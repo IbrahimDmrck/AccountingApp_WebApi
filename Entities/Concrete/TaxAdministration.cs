@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.PortableExecutable;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class TaxAdministration
+    public class TaxAdministration : IEntity
     {
         public int Id { get; set; }
         public string TaxAdministrationName { get; set; }

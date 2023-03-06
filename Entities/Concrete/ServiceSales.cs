@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Core.Entities;
+using System;
 
 namespace Entities.Concrete
 {
-    public class ServiceSales
+    public class ServiceSales : IEntity
     {
         public int Id { get; set; }
         public int MaterialId { get; set; }

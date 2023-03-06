@@ -1,6 +1,8 @@
-﻿namespace Entities.Concrete
+﻿using Core.Entities;
+
+namespace Entities.Concrete
 {
-    public class CompanyCreditCardReturnSlip
+    public class CompanyCreditCardReturnSlip : IEntity
     {
         public int Id { get; set; }
         public string ReceiptName { get; set; }

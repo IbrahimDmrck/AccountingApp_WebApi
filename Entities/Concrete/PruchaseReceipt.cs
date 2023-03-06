@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Core.Entities;
+using System;
 
 namespace Entities.Concrete
 {
-    public class PruchaseReceipt
+    public class PruchaseReceipt : IEntity
     {
         public int Id { get; set; }
         public string ReceiptName { get; set; }
