@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class TransferSip
+    public class VirmanPlug
     {
         public int Id { get; set; }
         public string ReceiptName { get; set; }

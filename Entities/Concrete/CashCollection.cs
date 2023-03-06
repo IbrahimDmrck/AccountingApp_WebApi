@@ -9,7 +9,7 @@ namespace Entities.Concrete
     public class CashCollection
     {
         public int Id { get; set; }
-        public string PrlugName { get; set; }
+        public string PlugName { get; set; }
         public DateTime Date { get; set; }
         public int CurrentAccountId { get; set; }
         public string Description { get; set; }
