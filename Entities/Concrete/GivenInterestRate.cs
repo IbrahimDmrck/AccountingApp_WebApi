@@ -14,7 +14,6 @@ namespace Entities.Concrete
         public DateTime Date { get; set; }
         public int CurrentAccountId { get; set; }
         public DateTime IssueDate { get; set; }
-
         public string Description { get; set; }
 
         
