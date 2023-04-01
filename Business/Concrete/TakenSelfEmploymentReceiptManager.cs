@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Result.Abstract;
+using Core.Utilities.Result.Concrete;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -19,12 +21,14 @@ namespace Business.Concrete
 
         public IResult Add(TakenSelfEmploymentReceipt entity)
         {
-            throw new NotImplementedException();
+            _takenSelfEmploymentReceiptDal.Add(entity);
+            return new SuccessResult(Messages.TakenSelfEmploymentReceiptAdded);
         }
 
         public IResult Delete(TakenSelfEmploymentReceipt entity)
         {
-            throw new NotImplementedException();
+            _takenSelfEmploymentReceiptDal.Delete(entity);
+            return new SuccessResult(Messages.TakenSelfEmploymentReceiptDeleted);
         }
 
         public IDataResult<TakenSelfEmploymentReceipt> Get(Expression<Func<TakenSelfEmploymentReceipt, bool>> filter)
@@ -34,12 +38,18 @@ namespace Business.Concrete
 
         public IDataResult<List<TakenSelfEmploymentReceipt>> GetAll(Expression<Func<TakenSelfEmploymentReceipt, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<TakenSelfEmploymentReceipt>>(_takenSelfEmploymentReceiptDal.GetAll(), Messages.TakenSelfEmploymentReceiptListed);
+        }
+
+        public IDataResult<TakenSelfEmploymentReceipt> GetEntityById(int id)
+        {
+            return new SuccessDataResult<TakenSelfEmploymentReceipt>(_takenSelfEmploymentReceiptDal.Get(b => b.Id == id), Messages.TakenSelfEmploymentReceiptListed);
         }
 
         public IResult Update(TakenSelfEmploymentReceipt entity)
         {
-            throw new NotImplementedException();
+            _takenSelfEmploymentReceiptDal.Update(entity);
+            return new SuccessResult(Messages.TakenSelfEmploymentReceiptUpdated);
         }
     }
 

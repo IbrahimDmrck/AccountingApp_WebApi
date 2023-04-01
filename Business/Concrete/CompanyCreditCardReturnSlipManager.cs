@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Result.Abstract;
+using Core.Utilities.Result.Concrete;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -19,12 +21,14 @@ namespace Business.Concrete
 
         public IResult Add(CompanyCreditCardReturnSlip entity)
         {
-            throw new NotImplementedException();
+            _companyCreditCardReturnSlipDal.Add(entity);
+            return new SuccessResult(Messages.CompanyCreditCardReturnSlipAdded);
         }
 
         public IResult Delete(CompanyCreditCardReturnSlip entity)
         {
-            throw new NotImplementedException();
+            _companyCreditCardReturnSlipDal.Delete(entity);
+            return new SuccessResult(Messages.CompanyCreditCardReturnSlipDeleted);
         }
 
         public IDataResult<CompanyCreditCardReturnSlip> Get(Expression<Func<CompanyCreditCardReturnSlip, bool>> filter)
@@ -34,12 +38,18 @@ namespace Business.Concrete
 
         public IDataResult<List<CompanyCreditCardReturnSlip>> GetAll(Expression<Func<CompanyCreditCardReturnSlip, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<CompanyCreditCardReturnSlip>>(_companyCreditCardReturnSlipDal.GetAll(), Messages.CompanyCreditCardReturnSlipListed);
+        }
+
+        public IDataResult<CompanyCreditCardReturnSlip> GetEntityById(int id)
+        {
+            return new SuccessDataResult<CompanyCreditCardReturnSlip>(_companyCreditCardReturnSlipDal.Get(b => b.Id == id), Messages.CompanyCreditCardReturnSlipListed);
         }
 
         public IResult Update(CompanyCreditCardReturnSlip entity)
         {
-            throw new NotImplementedException();
+            _companyCreditCardReturnSlipDal.Update(entity);
+            return new SuccessResult(Messages.CompanyCreditCardReturnSlipUpdated);
         }
     }
 

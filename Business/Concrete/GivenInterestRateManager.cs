@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Result.Abstract;
+using Core.Utilities.Result.Concrete;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -20,12 +22,14 @@ namespace Business.Concrete
 
         public IResult Add(GivenInterestRate entity)
         {
-            throw new NotImplementedException();
+            _givenInterestRateDal.Add(entity);
+            return new SuccessResult(Messages.GivenInterestRateAdded);
         }
 
         public IResult Delete(GivenInterestRate entity)
         {
-            throw new NotImplementedException();
+            _givenInterestRateDal.Delete(entity);
+            return new SuccessResult(Messages.GivenInterestRateDeleted);
         }
 
         public IDataResult<GivenInterestRate> Get(Expression<Func<GivenInterestRate, bool>> filter)
@@ -35,12 +39,18 @@ namespace Business.Concrete
 
         public IDataResult<List<GivenInterestRate>> GetAll(Expression<Func<GivenInterestRate, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<GivenInterestRate>>(_givenInterestRateDal.GetAll(), Messages.GivenInterestRateListed);
+        }
+
+        public IDataResult<GivenInterestRate> GetEntityById(int id)
+        {
+            return new SuccessDataResult<GivenInterestRate>(_givenInterestRateDal.Get(b => b.Id == id), Messages.GivenInterestRateListed);
         }
 
         public IResult Update(GivenInterestRate entity)
         {
-            throw new NotImplementedException();
+            _givenInterestRateDal.Update(entity);
+            return new SuccessResult(Messages.GivenInterestRateUpdated);
         }
     }
 

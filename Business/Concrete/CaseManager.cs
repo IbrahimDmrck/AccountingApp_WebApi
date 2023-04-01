@@ -1,6 +1,8 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.CrossCuttingconcerns.Caching;
 using Core.Utilities.Result.Abstract;
+using Core.Utilities.Result.Concrete;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -20,12 +22,14 @@ namespace Business.Concrete
 
         public IResult Add(Case entity)
         {
-            throw new NotImplementedException();
+            _caseDal.Add(entity);
+            return new SuccessResult(Messages.CaseAdded);
         }
 
         public IResult Delete(Case entity)
         {
-            throw new NotImplementedException();
+            _caseDal.Delete(entity);
+            return new SuccessResult(Messages.CaseDeleted);
         }
 
         public IDataResult<Case> Get(Expression<Func<Case, bool>> filter)
@@ -35,12 +39,18 @@ namespace Business.Concrete
 
         public IDataResult<List<Case>> GetAll(Expression<Func<Case, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<Case>>(_caseDal.GetAll(), Messages.CaseListed);
+        }
+
+        public IDataResult<Case> GetEntityById(int id)
+        {
+            return new SuccessDataResult<Case>(_caseDal.Get(b => b.ID == id), Messages.CaseListed);
         }
 
         public IResult Update(Case entity)
         {
-            throw new NotImplementedException();
+            _caseDal.Update(entity);
+            return new SuccessResult(Messages.CaseUpdated);
         }
     }
 

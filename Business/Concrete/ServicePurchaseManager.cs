@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Result.Abstract;
+using Core.Utilities.Result.Concrete;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -19,12 +21,14 @@ namespace Business.Concrete
 
         public IResult Add(ServicePurchase entity)
         {
-            throw new NotImplementedException();
+            _servicePurchaseDal.Add(entity);
+            return new SuccessResult(Messages.ServicePurchaseAdded);
         }
 
         public IResult Delete(ServicePurchase entity)
         {
-            throw new NotImplementedException();
+            _servicePurchaseDal.Delete(entity);
+            return new SuccessResult(Messages.ServicePurchaseDeleted);
         }
 
         public IDataResult<ServicePurchase> Get(Expression<Func<ServicePurchase, bool>> filter)
@@ -34,12 +38,18 @@ namespace Business.Concrete
 
         public IDataResult<List<ServicePurchase>> GetAll(Expression<Func<ServicePurchase, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<ServicePurchase>>(_servicePurchaseDal.GetAll(), Messages.ServicePurchaseListed);
+        }
+
+        public IDataResult<ServicePurchase> GetEntityById(int id)
+        {
+            return new SuccessDataResult<ServicePurchase>(_servicePurchaseDal.Get(b => b.Id == id), Messages.ServicePurchaseListed);
         }
 
         public IResult Update(ServicePurchase entity)
         {
-            throw new NotImplementedException();
+            _servicePurchaseDal.Update(entity);
+            return new SuccessResult(Messages.ServicePurchaseUpdated);
         }
     }
 

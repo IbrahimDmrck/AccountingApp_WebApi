@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Result.Abstract;
+using Core.Utilities.Result.Concrete;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -19,12 +21,14 @@ namespace Business.Concrete
 
         public IResult Add(SalesReceipt entity)
         {
-            throw new NotImplementedException();
+            _salesReceiptDal.Add(entity);
+            return new SuccessResult(Messages.SalesReceiptAdded);
         }
 
         public IResult Delete(SalesReceipt entity)
         {
-            throw new NotImplementedException();
+            _salesReceiptDal.Delete(entity);
+            return new SuccessResult(Messages.SalesReceiptDeleted);
         }
 
         public IDataResult<SalesReceipt> Get(Expression<Func<SalesReceipt, bool>> filter)
@@ -34,12 +38,18 @@ namespace Business.Concrete
 
         public IDataResult<List<SalesReceipt>> GetAll(Expression<Func<SalesReceipt, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<SalesReceipt>>(_salesReceiptDal.GetAll(), Messages.SalesReceiptListed);
+        }
+
+        public IDataResult<SalesReceipt> GetEntityById(int id)
+        {
+            return new SuccessDataResult<SalesReceipt>(_salesReceiptDal.Get(b => b.Id == id), Messages.SalesReceiptListed);
         }
 
         public IResult Update(SalesReceipt entity)
         {
-            throw new NotImplementedException();
+            _salesReceiptDal.Update(entity);
+            return new SuccessResult(Messages.SalesReceiptUpdated);
         }
     }
 

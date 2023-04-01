@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Result.Abstract;
+using Core.Utilities.Result.Concrete;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -20,12 +22,14 @@ namespace Business.Concrete
 
         public IResult Add(Debt entity)
         {
-            throw new NotImplementedException();
+            _debtDal.Add(entity);
+            return new SuccessResult(Messages.DebtAdded);
         }
 
         public IResult Delete(Debt entity)
         {
-            throw new NotImplementedException();
+            _debtDal.Delete(entity);
+            return new SuccessResult(Messages.DebtDeleted);
         }
 
         public IDataResult<Debt> Get(Expression<Func<Debt, bool>> filter)
@@ -35,12 +39,18 @@ namespace Business.Concrete
 
         public IDataResult<List<Debt>> GetAll(Expression<Func<Debt, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<Debt>>(_debtDal.GetAll(), Messages.DebtListed);
+        }
+
+        public IDataResult<Debt> GetEntityById(int id)
+        {
+            return new SuccessDataResult<Debt>(_debtDal.Get(b => b.Id == id), Messages.DebtListed);
         }
 
         public IResult Update(Debt entity)
         {
-            throw new NotImplementedException();
+            _debtDal.Update(entity);
+            return new SuccessResult(Messages.DebtUpdated);
         }
     }
 

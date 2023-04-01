@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Result.Abstract;
+using Core.Utilities.Result.Concrete;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -19,12 +21,14 @@ namespace Business.Concrete
 
         public IResult Add(CarrierCompany entity)
         {
-            throw new NotImplementedException();
+            _carrierCompanyDal.Add(entity);
+            return new SuccessResult(Messages.CarrierCompanyAdded);
         }
 
         public IResult Delete(CarrierCompany entity)
         {
-            throw new NotImplementedException();
+            _carrierCompanyDal.Delete(entity);
+            return new SuccessResult(Messages.CarrierCompanyDeleted);
         }
 
         public IDataResult<CarrierCompany> Get(Expression<Func<CarrierCompany, bool>> filter)
@@ -34,12 +38,18 @@ namespace Business.Concrete
 
         public IDataResult<List<CarrierCompany>> GetAll(Expression<Func<CarrierCompany, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<CarrierCompany>>(_carrierCompanyDal.GetAll(), Messages.CarrierCompanyListed);
+        }
+
+        public IDataResult<CarrierCompany> GetEntityById(int id)
+        {
+            return new SuccessDataResult<CarrierCompany>(_carrierCompanyDal.Get(b => b.Id == id), Messages.CarrierCompanyListed);
         }
 
         public IResult Update(CarrierCompany entity)
         {
-            throw new NotImplementedException();
+            _carrierCompanyDal.Update(entity);
+            return new SuccessResult(Messages.CarrierCompanyUpdated);
         }
     }
 

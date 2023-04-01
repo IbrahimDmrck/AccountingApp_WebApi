@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Result.Abstract;
+using Core.Utilities.Result.Concrete;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -19,12 +21,14 @@ namespace Business.Concrete
 
         public IResult Add(UnitSet entity)
         {
-            throw new NotImplementedException();
+            _unitSetDal.Add(entity);
+            return new SuccessResult(Messages.UnitSetAdded);
         }
 
         public IResult Delete(UnitSet entity)
         {
-            throw new NotImplementedException();
+            _unitSetDal.Delete(entity);
+            return new SuccessResult(Messages.UnitSetDeleted);
         }
 
         public IDataResult<UnitSet> Get(Expression<Func<UnitSet, bool>> filter)
@@ -34,12 +38,18 @@ namespace Business.Concrete
 
         public IDataResult<List<UnitSet>> GetAll(Expression<Func<UnitSet, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<UnitSet>>(_unitSetDal.GetAll(), Messages.UnitSetListed);
+        }
+
+        public IDataResult<UnitSet> GetEntityById(int id)
+        {
+            return new SuccessDataResult<UnitSet>(_unitSetDal.Get(b => b.Id == id), Messages.UnitSetListed);
         }
 
         public IResult Update(UnitSet entity)
         {
-            throw new NotImplementedException();
+            _unitSetDal.Update(entity);
+            return new SuccessResult(Messages.UnitSetUpdated);
         }
     }
 

@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Result.Abstract;
+using Core.Utilities.Result.Concrete;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -19,12 +21,14 @@ namespace Business.Concrete
 
         public IResult Add(CreditCardReceipt entity)
         {
-            throw new NotImplementedException();
+            _creditCardReceiptDal.Add(entity);
+            return new SuccessResult(Messages.CreditCardReceiptAdded);
         }
 
         public IResult Delete(CreditCardReceipt entity)
         {
-            throw new NotImplementedException();
+            _creditCardReceiptDal.Delete(entity);
+            return new SuccessResult(Messages.CreditCardReceiptDeleted);
         }
 
         public IDataResult<CreditCardReceipt> Get(Expression<Func<CreditCardReceipt, bool>> filter)
@@ -34,12 +38,18 @@ namespace Business.Concrete
 
         public IDataResult<List<CreditCardReceipt>> GetAll(Expression<Func<CreditCardReceipt, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<CreditCardReceipt>>(_creditCardReceiptDal.GetAll(), Messages.CreditCardReceiptListed);
+        }
+
+        public IDataResult<CreditCardReceipt> GetEntityById(int id)
+        {
+            return new SuccessDataResult<CreditCardReceipt>(_creditCardReceiptDal.Get(b => b.Id == id), Messages.CreditCardReceiptListed);
         }
 
         public IResult Update(CreditCardReceipt entity)
         {
-            throw new NotImplementedException();
+            _creditCardReceiptDal.Update(entity);
+            return new SuccessResult(Messages.CreditCardReceiptUpdated);
         }
     }
 

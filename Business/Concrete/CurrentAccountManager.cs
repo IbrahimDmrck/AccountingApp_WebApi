@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Result.Abstract;
+using Core.Utilities.Result.Concrete;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -20,12 +22,14 @@ namespace Business.Concrete
 
         public IResult Add(CurrentAccount entity)
         {
-            throw new NotImplementedException();
+            _currentAccountDal.Add(entity);
+            return new SuccessResult(Messages.CurrentAccountAdded);
         }
 
         public IResult Delete(CurrentAccount entity)
         {
-            throw new NotImplementedException();
+            _currentAccountDal.Delete(entity);
+            return new SuccessResult(Messages.CurrentAccountDeleted);
         }
 
         public IDataResult<CurrentAccount> Get(Expression<Func<CurrentAccount, bool>> filter)
@@ -35,12 +39,18 @@ namespace Business.Concrete
 
         public IDataResult<List<CurrentAccount>> GetAll(Expression<Func<CurrentAccount, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<CurrentAccount>>(_currentAccountDal.GetAll(), Messages.CurrentAccountListed);
+        }
+
+        public IDataResult<CurrentAccount> GetEntityById(int id)
+        {
+            return new SuccessDataResult<CurrentAccount>(_currentAccountDal.Get(b => b.CurrentAccountId == id), Messages.CurrentAccountListed);
         }
 
         public IResult Update(CurrentAccount entity)
         {
-            throw new NotImplementedException();
+            _currentAccountDal.Update(entity);
+            return new SuccessResult(Messages.CurrentAccountUpdated);
         }
     }
 

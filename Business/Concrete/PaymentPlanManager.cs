@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Result.Abstract;
+using Core.Utilities.Result.Concrete;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -19,12 +21,14 @@ namespace Business.Concrete
 
         public IResult Add(PaymentPlan entity)
         {
-            throw new NotImplementedException();
+            _paymentPlanDal.Add(entity);
+            return new SuccessResult(Messages.PaymentPlanAdded);
         }
 
         public IResult Delete(PaymentPlan entity)
         {
-            throw new NotImplementedException();
+            _paymentPlanDal.Delete(entity);
+            return new SuccessResult(Messages.PaymentPlanDeleted);
         }
 
         public IDataResult<PaymentPlan> Get(Expression<Func<PaymentPlan, bool>> filter)
@@ -34,12 +38,18 @@ namespace Business.Concrete
 
         public IDataResult<List<PaymentPlan>> GetAll(Expression<Func<PaymentPlan, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<PaymentPlan>>(_paymentPlanDal.GetAll(), Messages.PaymentPlanListed);
+        }
+
+        public IDataResult<PaymentPlan> GetEntityById(int id)
+        {
+            return new SuccessDataResult<PaymentPlan>(_paymentPlanDal.Get(b => b.Id == id), Messages.PaymentPlanListed);
         }
 
         public IResult Update(PaymentPlan entity)
         {
-            throw new NotImplementedException();
+            _paymentPlanDal.Update(entity);
+            return new SuccessResult(Messages.PaymentPlanUUpdated);
         }
     }
 

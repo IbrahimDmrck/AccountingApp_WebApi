@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Result.Abstract;
+using Core.Utilities.Result.Concrete;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -19,12 +21,14 @@ namespace Business.Concrete
 
         public IResult Add(ServiceReceive entity)
         {
-            throw new NotImplementedException();
+            _serviceReceiveDal.Add(entity);
+            return new SuccessResult(Messages.ServiceReceiveAdded);
         }
 
         public IResult Delete(ServiceReceive entity)
         {
-            throw new NotImplementedException();
+            _serviceReceiveDal.Delete(entity);
+            return new SuccessResult(Messages.ServiceReceiveDeleted);
         }
 
         public IDataResult<ServiceReceive> Get(Expression<Func<ServiceReceive, bool>> filter)
@@ -34,12 +38,18 @@ namespace Business.Concrete
 
         public IDataResult<List<ServiceReceive>> GetAll(Expression<Func<ServiceReceive, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<ServiceReceive>>(_serviceReceiveDal.GetAll(), Messages.ServiceReceiveListed);
+        }
+
+        public IDataResult<ServiceReceive> GetEntityById(int id)
+        {
+            return new SuccessDataResult<ServiceReceive>(_serviceReceiveDal.Get(b => b.Id == id), Messages.ServiceReceiveListed);
         }
 
         public IResult Update(ServiceReceive entity)
         {
-            throw new NotImplementedException();
+            _serviceReceiveDal.Update(entity);
+            return new SuccessResult(Messages.ServiceReceiveUpdated);
         }
     }
 

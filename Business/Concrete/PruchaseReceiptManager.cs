@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Result.Abstract;
+using Core.Utilities.Result.Concrete;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -19,12 +21,14 @@ namespace Business.Concrete
 
         public IResult Add(PruchaseReceipt entity)
         {
-            throw new NotImplementedException();
+            _pruchaseReceiptDal.Add(entity);
+            return new SuccessResult(Messages.PruchaseReceiptAdded);
         }
 
         public IResult Delete(PruchaseReceipt entity)
         {
-            throw new NotImplementedException();
+            _pruchaseReceiptDal.Delete(entity);
+            return new SuccessResult(Messages.PruchaseReceiptDeleted);
         }
 
         public IDataResult<PruchaseReceipt> Get(Expression<Func<PruchaseReceipt, bool>> filter)
@@ -34,12 +38,18 @@ namespace Business.Concrete
 
         public IDataResult<List<PruchaseReceipt>> GetAll(Expression<Func<PruchaseReceipt, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<PruchaseReceipt>>(_pruchaseReceiptDal.GetAll(), Messages.PruchaseReceiptListed);
+        }
+
+        public IDataResult<PruchaseReceipt> GetEntityById(int id)
+        {
+            return new SuccessDataResult<PruchaseReceipt>(_pruchaseReceiptDal.Get(b => b.Id == id), Messages.PruchaseReceiptListed);
         }
 
         public IResult Update(PruchaseReceipt entity)
         {
-            throw new NotImplementedException();
+            _pruchaseReceiptDal.Update(entity);
+            return new SuccessResult(Messages.PruchaseReceiptUpdated);
         }
     }
 

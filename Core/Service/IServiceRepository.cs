@@ -14,6 +14,7 @@ namespace Core.Service
     {
         IDataResult<List<T>> GetAll(Expression<Func<T, bool>> filter = null);
         IDataResult<T> Get(Expression<Func<T, bool>> filter);
+        IDataResult<T> GetEntityById(int id);
         IResult Add(T entity);
         IResult Update(T entity);
         IResult Delete(T entity);

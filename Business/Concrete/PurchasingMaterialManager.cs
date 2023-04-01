@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Result.Abstract;
+using Core.Utilities.Result.Concrete;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -20,12 +22,14 @@ namespace Business.Concrete
 
         public IResult Add(PurchasingMaterial entity)
         {
-            throw new NotImplementedException();
+            _purchasingMaterialDal.Add(entity);
+            return new SuccessResult(Messages.PurchasingMaterialAdded);
         }
 
         public IResult Delete(PurchasingMaterial entity)
         {
-            throw new NotImplementedException();
+            _purchasingMaterialDal.Delete(entity);
+            return new SuccessResult(Messages.PurchasingMaterialDeleted);
         }
 
         public IDataResult<PurchasingMaterial> Get(Expression<Func<PurchasingMaterial, bool>> filter)
@@ -35,12 +39,18 @@ namespace Business.Concrete
 
         public IDataResult<List<PurchasingMaterial>> GetAll(Expression<Func<PurchasingMaterial, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<PurchasingMaterial>>(_purchasingMaterialDal.GetAll(), Messages.PurchasingMaterial);
+        }
+
+        public IDataResult<PurchasingMaterial> GetEntityById(int id)
+        {
+            return new SuccessDataResult<PurchasingMaterial>(_purchasingMaterialDal.Get(b => b.Id == id), Messages.PurchasingMaterial);
         }
 
         public IResult Update(PurchasingMaterial entity)
         {
-            throw new NotImplementedException();
+            _purchasingMaterialDal.Update(entity);
+            return new SuccessResult(Messages.PurchasingMaterialUpdated);
         }
     }
 

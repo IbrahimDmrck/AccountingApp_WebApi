@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Result.Abstract;
+using Core.Utilities.Result.Concrete;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -20,12 +22,14 @@ namespace Business.Concrete
 
         public IResult Add(ShippingAdress entity)
         {
-            throw new NotImplementedException();
+            _shippingAdressDal.Add(entity);
+            return new SuccessResult(Messages.ShippingAdressAdded);
         }
 
         public IResult Delete(ShippingAdress entity)
         {
-            throw new NotImplementedException();
+            _shippingAdressDal.Delete(entity);
+            return new SuccessResult(Messages.ShippingAdressDeleted);
         }
 
         public IDataResult<ShippingAdress> Get(Expression<Func<ShippingAdress, bool>> filter)
@@ -35,12 +39,18 @@ namespace Business.Concrete
 
         public IDataResult<List<ShippingAdress>> GetAll(Expression<Func<ShippingAdress, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<ShippingAdress>>(_shippingAdressDal.GetAll(), Messages.ShippingAdressListed);
+        }
+
+        public IDataResult<ShippingAdress> GetEntityById(int id)
+        {
+            return new SuccessDataResult<ShippingAdress>(_shippingAdressDal.Get(b => b.Id == id), Messages.ShippingAdressListed);
         }
 
         public IResult Update(ShippingAdress entity)
         {
-            throw new NotImplementedException();
+            _shippingAdressDal.Update(entity);
+            return new SuccessResult(Messages.ShippingAdressUpdated);
         }
     }
 
