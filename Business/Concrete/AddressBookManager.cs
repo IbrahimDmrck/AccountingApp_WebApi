@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Core.Utilities.Result.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,13 @@ namespace Business.Concrete
 {
     public class AddressBookManager : IAddressBookService
     {
+        IAddressBookDal _addressBookDal;
+
+        public AddressBookManager(IAddressBookDal addressBookDal)
+        {
+            _addressBookDal = addressBookDal;
+        }
+
         public IResult Add(AddressBook entity)
         {
             throw new NotImplementedException();

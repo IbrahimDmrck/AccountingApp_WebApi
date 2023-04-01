@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Core.Utilities.Result.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,13 @@ namespace Business.Concrete
 {
     public class CompanyCreditCardReceiptManager : ICompanyCreditCardReceiptService
     {
+        ICompanyCreditCardReceiptDal _companyCreditCardReceiptDal;
+
+        public CompanyCreditCardReceiptManager(ICompanyCreditCardReceiptDal companyCreditCardReceiptDal)
+        {
+            _companyCreditCardReceiptDal = companyCreditCardReceiptDal;
+        }
+
         public IResult Add(CompanyCreditCardReceipt entity)
         {
             throw new NotImplementedException();

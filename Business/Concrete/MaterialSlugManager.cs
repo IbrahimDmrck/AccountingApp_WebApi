@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Core.Utilities.Result.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,13 @@ namespace Business.Concrete
 {
     public class MaterialSlugManager : IMaterialSlugService
     {
+        IMaterialSlugDal _materialSlugDal;
+
+        public MaterialSlugManager(IMaterialSlugDal materialSlugDal)
+        {
+            _materialSlugDal = materialSlugDal;
+        }
+
         public IResult Add(MaterialSlug entity)
         {
             throw new NotImplementedException();

@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Core.Utilities.Result.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,13 @@ namespace Business.Concrete
 {
     public class SalesReceiptManager : ISalesReceiptService
     {
+        ISalesReceiptDal _salesReceiptDal;
+
+        public SalesReceiptManager(ISalesReceiptDal salesReceiptDal)
+        {
+            _salesReceiptDal = salesReceiptDal;
+        }
+
         public IResult Add(SalesReceipt entity)
         {
             throw new NotImplementedException();

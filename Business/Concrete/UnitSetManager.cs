@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Core.Utilities.Result.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,13 @@ namespace Business.Concrete
 {
     public class UnitSetManager : IUnitSetService
     {
+        IUnitSetDal _unitSetDal;
+
+        public UnitSetManager(IUnitSetDal unitSetDal)
+        {
+            _unitSetDal = unitSetDal;
+        }
+
         public IResult Add(UnitSet entity)
         {
             throw new NotImplementedException();

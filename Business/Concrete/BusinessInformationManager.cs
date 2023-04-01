@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Core.Utilities.Result.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,13 @@ namespace Business.Concrete
 {
     public class BusinessInformationManager : IBusinessInformationService
     {
+        IBusinessInformationDal _businessInformationDal;
+
+        public BusinessInformationManager(IBusinessInformationDal businessInformationDal)
+        {
+            _businessInformationDal = businessInformationDal;
+        }
+
         public IResult Add(BusinessInformation entity)
         {
             throw new NotImplementedException();

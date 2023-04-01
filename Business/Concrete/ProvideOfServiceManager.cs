@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Core.Utilities.Result.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,13 @@ namespace Business.Concrete
 {
     public class ProvideOfServiceManager : IProvideOfServiceService
     {
+        IProvideOfServiceDal _provideOfServiceDal;
+
+        public ProvideOfServiceManager(IProvideOfServiceDal provideOfServiceDal)
+        {
+            _provideOfServiceDal = provideOfServiceDal;
+        }
+
         public IResult Add(ProvideOfService entity)
         {
             throw new NotImplementedException();

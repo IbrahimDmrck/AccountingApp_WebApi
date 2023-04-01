@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Core.Utilities.Result.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,13 @@ namespace Business.Concrete
 {
     public class ServiceReceiveManager : IServiceReceiveService
     {
+        IServiceReceiveDal _serviceReceiveDal;
+
+        public ServiceReceiveManager(IServiceReceiveDal serviceReceiveDal)
+        {
+            _serviceReceiveDal = serviceReceiveDal;
+        }
+
         public IResult Add(ServiceReceive entity)
         {
             throw new NotImplementedException();

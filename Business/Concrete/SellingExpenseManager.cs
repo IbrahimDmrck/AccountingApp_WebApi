@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Core.Utilities.Result.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,13 @@ namespace Business.Concrete
 {
     public class SellingExpenseManager : ISellingExpenseService
     {
+        ISellingExpenseDal _sellingExpenseDal;
+
+        public SellingExpenseManager(ISellingExpenseDal sellingExpenseDal)
+        {
+            _sellingExpenseDal = sellingExpenseDal;
+        }
+
         public IResult Add(SellingExpense entity)
         {
             throw new NotImplementedException();

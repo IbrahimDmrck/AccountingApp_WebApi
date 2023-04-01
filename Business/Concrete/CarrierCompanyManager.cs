@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Core.Utilities.Result.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,13 @@ namespace Business.Concrete
 {
     public class CarrierCompanyManager : ICarrierCompanyService
     {
+        ICarrierCompanyDal _carrierCompanyDal;
+
+        public CarrierCompanyManager(ICarrierCompanyDal carrierCompanyDal)
+        {
+            _carrierCompanyDal = carrierCompanyDal;
+        }
+
         public IResult Add(CarrierCompany entity)
         {
             throw new NotImplementedException();

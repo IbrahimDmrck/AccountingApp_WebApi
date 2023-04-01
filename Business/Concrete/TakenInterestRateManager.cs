@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Core.Utilities.Result.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,13 @@ namespace Business.Concrete
 {
     public class TakenInterestRateManager : ITakenInterestRateService
     {
+        ITakenInterestRateDal _takenInterestRateDal;
+
+        public TakenInterestRateManager(ITakenInterestRateDal takenInterestRateDal)
+        {
+            _takenInterestRateDal = takenInterestRateDal;
+        }
+
         public IResult Add(TakenInterestRate entity)
         {
             throw new NotImplementedException();

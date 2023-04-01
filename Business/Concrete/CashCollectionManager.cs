@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Core.Utilities.Result.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,13 @@ namespace Business.Concrete
 {
     public class CashCollectionManager : ICashCollectionService
     {
+        ICashCollectionDal _cashCollectionDal;
+
+        public CashCollectionManager(ICashCollectionDal cashCollectionDal)
+        {
+            _cashCollectionDal = cashCollectionDal;
+        }
+
         public IResult Add(CashCollection entity)
         {
             throw new NotImplementedException();

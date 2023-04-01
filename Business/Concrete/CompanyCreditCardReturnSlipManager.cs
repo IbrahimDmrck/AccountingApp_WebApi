@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Core.Utilities.Result.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,13 @@ namespace Business.Concrete
 {
     public class CompanyCreditCardReturnSlipManager : ICompanyCreditCardReturnSlipService
     {
+        ICompanyCreditCardReturnSlipDal _companyCreditCardReturnSlipDal;
+
+        public CompanyCreditCardReturnSlipManager(ICompanyCreditCardReturnSlipDal companyCreditCardReturnSlipDal)
+        {
+            _companyCreditCardReturnSlipDal = companyCreditCardReturnSlipDal;
+        }
+
         public IResult Add(CompanyCreditCardReturnSlip entity)
         {
             throw new NotImplementedException();

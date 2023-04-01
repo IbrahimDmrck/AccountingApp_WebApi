@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Core.Utilities.Result.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,14 @@ namespace Business.Concrete
 {
     public class CreditManager : ICreditService
     {
+
+        ICreditDal _creditDal;
+
+        public CreditManager(ICreditDal creditDal)
+        {
+            _creditDal = creditDal;
+        }
+
         public IResult Add(Credit entity)
         {
             throw new NotImplementedException();

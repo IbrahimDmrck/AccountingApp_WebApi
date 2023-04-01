@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Core.Utilities.Result.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,13 @@ namespace Business.Concrete
 {
     public class GivenSelfEmploymentReceiptManager : IGivenSelfEmploymentReceiptService
     {
+        IGivenSelfEmploymentReceiptDal _givenSelfEmploymentReceiptDal;
+
+        public GivenSelfEmploymentReceiptManager(IGivenSelfEmploymentReceiptDal givenSelfEmploymentReceiptDal)
+        {
+            _givenSelfEmploymentReceiptDal = givenSelfEmploymentReceiptDal;
+        }
+
         public IResult Add(GivenSelfEmploymentReceipt entity)
         {
             throw new NotImplementedException();

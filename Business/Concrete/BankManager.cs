@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Core.Utilities.Result.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,13 @@ namespace Business.Concrete
 {
     public class BankManager : IBankService
     {
+        IBankDal _bankDal;
+
+        public BankManager(IBankDal bankDal)
+        {
+            _bankDal = bankDal;
+        }
+
         public IResult Add(Bank entity)
         {
             throw new NotImplementedException();

@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using Core.CrossCuttingconcerns.Caching;
 using Core.Utilities.Result.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,13 @@ namespace Business.Concrete
 {
     public class CaseManager : ICaseService
     {
+        ICaseDal _caseDal;
+
+        public CaseManager(ICaseDal caseDal)
+        {
+            _caseDal = caseDal;
+        }
+
         public IResult Add(Case entity)
         {
             throw new NotImplementedException();

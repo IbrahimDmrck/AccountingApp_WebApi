@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Core.Utilities.Result.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,13 @@ namespace Business.Concrete
 {
     public class TaxAdministrationManager : ITaxAdministrationService
     {
+        ITaxAdministrationDal _taxAdministrationDal;
+
+        public TaxAdministrationManager(ITaxAdministrationDal taxAdministrationDal)
+        {
+            _taxAdministrationDal = taxAdministrationDal;
+        }
+
         public IResult Add(TaxAdministration entity)
         {
             throw new NotImplementedException();

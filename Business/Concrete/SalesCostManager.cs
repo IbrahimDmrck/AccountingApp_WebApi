@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Core.Utilities.Result.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,14 @@ namespace Business.Concrete
 {
     public class SalesCostManager : ISalesCostService
     {
+
+        ISalesCostDal _salesCostDal;
+
+        public SalesCostManager(ISalesCostDal salesCostDal)
+        {
+            _salesCostDal = salesCostDal;
+        }
+
         public IResult Add(SalesCost entity)
         {
             throw new NotImplementedException();

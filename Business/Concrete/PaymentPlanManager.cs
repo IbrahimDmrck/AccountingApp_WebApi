@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Core.Utilities.Result.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,13 @@ namespace Business.Concrete
 {
     public class PaymentPlanManager : IPaymentPlanService
     {
+        IPaymentPlanDal _paymentPlanDal;
+
+        public PaymentPlanManager(IPaymentPlanDal paymentPlanDal)
+        {
+            _paymentPlanDal = paymentPlanDal;
+        }
+
         public IResult Add(PaymentPlan entity)
         {
             throw new NotImplementedException();

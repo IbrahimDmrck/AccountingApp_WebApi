@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Core.Utilities.Result.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,14 @@ namespace Business.Concrete
 {
     public class ShippingAdressManager : IShippingAdressService
     {
+
+        IShippingAdressDal _shippingAdressDal;
+
+        public ShippingAdressManager(IShippingAdressDal shippingAdressDal)
+        {
+            _shippingAdressDal = shippingAdressDal;
+        }
+
         public IResult Add(ShippingAdress entity)
         {
             throw new NotImplementedException();
