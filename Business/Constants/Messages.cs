@@ -16,253 +16,261 @@ namespace Business.Constants
         public static string AdditionalTaxListed;
 
 
-        internal static string AddressBookAdded;
-        internal static string AddressBookDeleted;
-        internal static string AddressBookUpdated;
-        internal static string AddressBookListed;
+        public static string AddressBookAdded;
+        public static string AddressBookDeleted;
+        public static string AddressBookUpdated;
+        public static string AddressBookListed;
 
 
-        internal static string BankAdded;
-        internal static string BankDeleted;
-        internal static string BankUpdated;
-        internal static string BankListed;
+        public static string BankAdded;
+        public static string BankDeleted;
+        public static string BankUpdated;
+        public static string BankListed;
 
 
-        internal static string BusinessInformationAdded;
-        internal static string BusinessInformationDeleted;
-        internal static string BusinessInformationUpdated;
-        internal static string BusinessInformationListed;
+        public static string BusinessInformationAdded;
+        public static string BusinessInformationDeleted;
+        public static string BusinessInformationUpdated;
+        public static string BusinessInformationListed;
 
 
-        internal static string BusinessTransactionAdded;
-        internal static string BusinessTransactionDeleted;
-        internal static string BusinessTransactionUpdated;
-        internal static string BusinessTransactionListed;
+        public static string BusinessTransactionAdded;
+        public static string BusinessTransactionDeleted;
+        public static string BusinessTransactionUpdated;
+        public static string BusinessTransactionListed;
 
 
-        internal static string CarrierCompanyAdded;
-        internal static string CarrierCompanyDeleted;
-        internal static string CarrierCompanyUpdated;
-        internal static string CarrierCompanyListed;
+        public static string CarrierCompanyAdded;
+        public static string CarrierCompanyDeleted;
+        public static string CarrierCompanyUpdated;
+        public static string CarrierCompanyListed;
 
 
-        internal static string CaseAdded;
-        internal static string CaseDeleted;
-        internal static string CaseUpdated;
-        internal static string CaseListed;
+        public static string CaseAdded;
+        public static string CaseDeleted;
+        public static string CaseUpdated;
+        public static string CaseListed;
 
 
-        internal static string CashCollectionAdded;
-        internal static string CashCollectionDeleted;
-        internal static string CashCollectionUpdated;
-        internal static string CashCollectionListed;
+        public static string CashCollectionAdded;
+        public static string CashCollectionDeleted;
+        public static string CashCollectionUpdated;
+        public static string CashCollectionListed;
 
 
-        internal static string CashPaymentAdded;
-        internal static string CashPaymentDeleted;
-        internal static string CashPaymentUpdated;
-        internal static string CashPaymentListed;
+        public static string CashPaymentAdded;
+        public static string CashPaymentDeleted;
+        public static string CashPaymentUpdated;
+        public static string CashPaymentListed;
 
 
-        internal static string CompanyCreditCardReceiptAdded;
-        internal static string CompanyCreditCardReceiptDeleted;
-        internal static string CompanyCreditCardReceiptUpdated;
-        internal static string CompanyCreditCardReceiptUpdatedListed;
+        public static string CompanyCreditCardReceiptAdded;
+        public static string CompanyCreditCardReceiptDeleted;
+        public static string CompanyCreditCardReceiptUpdated;
+        public static string CompanyCreditCardReceiptUpdatedListed;
 
 
-        internal static string CompanyCreditCardReturnSlipAdded;
-        internal static string CompanyCreditCardReturnSlipDeleted;
-        internal static string CompanyCreditCardReturnSlipUpdated;
-        internal static string CompanyCreditCardReturnSlipListed;
+        public static string CompanyCreditCardReturnSlipAdded;
+        public static string CompanyCreditCardReturnSlipDeleted;
+        public static string CompanyCreditCardReturnSlipUpdated;
+        public static string CompanyCreditCardReturnSlipListed;
 
 
-        internal static string CompanyAdded;
-        internal static string CompanyDeleted;
-        internal static string CompanyUpdated;
-        internal static string CompanyListed;
+        public static string CompanyAdded;
+        public static string CompanyDeleted;
+        public static string CompanyUpdated;
+        public static string CompanyListed;
 
 
-        internal static string CreditCardReceiptAdded;
-        internal static string CreditCardReceiptDeleted;
-        internal static string CreditCardReceiptUpdated;
-        internal static string CreditCardReceiptListed;
+        public static string CreditCardReceiptAdded;
+        public static string CreditCardReceiptDeleted;
+        public static string CreditCardReceiptUpdated;
+        public static string CreditCardReceiptListed;
 
 
-        internal static string CreditCardReturnSlipAdded;
-        internal static string CreditCardReturnSlipDeleted;
-        internal static string CreditCardReturnSlipUpdated;
-        internal static string CreditCardReturnSlipListed;
+        public static string CreditCardReturnSlipAdded;
+        public static string CreditCardReturnSlipDeleted;
+        public static string CreditCardReturnSlipUpdated;
+        public static string CreditCardReturnSlipListed;
 
 
-        internal static string CreditAdded;
-        internal static string CreditUpdated;
-        internal static string CreditDeleted;
-        internal static string CreditListed;
+        public static string CreditAdded;
+        public static string CreditUpdated;
+        public static string CreditDeleted;
+        public static string CreditListed;
 
 
-        internal static string CurrentAccountAdded;
-        internal static string CurrentAccountDeleted;
-        internal static string CurrentAccountUpdated;
-        internal static string CurrentAccountListed;
+        public static string CurrentAccountAdded;
+        public static string CurrentAccountDeleted;
+        public static string CurrentAccountUpdated;
+        public static string CurrentAccountListed;
 
 
-        internal static string DebtAdded;
-        internal static string DebtDeleted;
-        internal static string DebtUpdated;
-        internal static string DebtListed;
+        public static string DebtAdded;
+        public static string DebtDeleted;
+        public static string DebtUpdated;
+        public static string DebtListed;
 
 
-        internal static string GivenInterestRateAdded;
-        internal static string GivenInterestRateDeleted;
-        internal static string GivenInterestRateUpdated;
-        internal static string GivenInterestRateListed;
+        public static string GivenInterestRateAdded;
+        public static string GivenInterestRateDeleted;
+        public static string GivenInterestRateUpdated;
+        public static string GivenInterestRateListed;
 
 
-        internal static string GivenSelfEmploymentReceiptAdded;
-        internal static string GivenSelfEmploymentReceiptDeleted;
-        internal static string GivenSelfEmploymentReceiptUpdated;
-        internal static string GivenSelfEmploymentReceiptListed;
+        public static string GivenSelfEmploymentReceiptAdded;
+        public static string GivenSelfEmploymentReceiptDeleted;
+        public static string GivenSelfEmploymentReceiptUpdated;
+        public static string GivenSelfEmploymentReceiptListed;
 
-        internal static string MaterialAdded;
-        internal static string MaterialDeleted;
-        internal static string MaterialUpdated;
-        internal static string MaterialListed;
-
-
-        internal static string MaterialSalesAdded;
-        internal static string MaterialSalesDeleted;
-        internal static string MaterialSalesUpdated;
-        internal static string MaterialSalesListed;
+        public static string MaterialAdded;
+        public static string MaterialDeleted;
+        public static string MaterialUpdated;
+        public static string MaterialListed;
 
 
-        internal static string MaterialSlugAdded;
-        internal static string MaterialSlugDeleted;
-        internal static string MaterialSlugUpdated;
-        internal static string MaterialSlugListed;
+        public static string MaterialSalesAdded;
+        public static string MaterialSalesDeleted;
+        public static string MaterialSalesUpdated;
+        public static string MaterialSalesListed;
 
 
-        internal static string PaymentPlanAdded;
-        internal static string PaymentPlanDeleted;
-        internal static string PaymentPlanUUpdated;
-        internal static string PaymentPlanListed;
+        public static string MaterialSlugAdded;
+        public static string MaterialSlugDeleted;
+        public static string MaterialSlugUpdated;
+        public static string MaterialSlugListed;
 
 
-        internal static string ProvideOfServiceAdded;
-        internal static string ProvideOfServiceDeleted;
-        internal static string ProvideOfServiceUpdated;
-        internal static string ProvideOfServiceListed;
+        public static string PaymentPlanAdded;
+        public static string PaymentPlanDeleted;
+        public static string PaymentPlanUUpdated;
+        public static string PaymentPlanListed;
 
 
-        internal static string PruchaseReceiptAdded;
-        internal static string PruchaseReceiptDeleted;
-        internal static string PruchaseReceiptUpdated;
-        internal static string PruchaseReceiptListed;
+        public static string ProvideOfServiceAdded;
+        public static string ProvideOfServiceDeleted;
+        public static string ProvideOfServiceUpdated;
+        public static string ProvideOfServiceListed;
 
 
-        internal static string PurchasingMaterialAdded;
-        internal static string PurchasingMaterialDeleted;
-        internal static string PurchasingMaterialUpdated;
-        internal static string PurchasingMaterial;
+        public static string PruchaseReceiptAdded;
+        public static string PruchaseReceiptDeleted;
+        public static string PruchaseReceiptUpdated;
+        public static string PruchaseReceiptListed;
+
+
+        public static string PurchasingMaterialAdded;
+        public static string PurchasingMaterialDeleted;
+        public static string PurchasingMaterialUpdated;
+        public static string PurchasingMaterial;
         public static string PurchasingMaterialListed;
 
 
-        internal static string SalesCostAdded;
-        internal static string SalesCostDeleted;
-        internal static string SalesCostUpdated;
-        internal static string SalesCostListed;
+        public static string SalesCostAdded;
+        public static string SalesCostDeleted;
+        public static string SalesCostUpdated;
+        public static string SalesCostListed;
 
 
-        internal static string SalesDiscountAdded;
-        internal static string SalesDiscountDeleted;
-        internal static string SalesDiscountUpdated;
-        internal static string SalesDiscountListed;
+        public static string SalesDiscountAdded;
+        public static string SalesDiscountDeleted;
+        public static string SalesDiscountUpdated;
+        public static string SalesDiscountListed;
 
 
-        internal static string SalesOrderAdded;
-        internal static string SalesOrderDeleted;
-        internal static string SalesOrderUpdated;
-        internal static string SalesOrderListed;
+        public static string SalesOrderAdded;
+        public static string SalesOrderDeleted;
+        public static string SalesOrderUpdated;
+        public static string SalesOrderListed;
 
 
-        internal static string SalesReceiptAdded;
-        internal static string SalesReceiptDeleted;
-        internal static string SalesReceiptUpdated;
-        internal static string SalesReceiptListed;
+        public static string SalesReceiptAdded;
+        public static string SalesReceiptDeleted;
+        public static string SalesReceiptUpdated;
+        public static string SalesReceiptListed;
 
 
-        internal static string SellingExpenseAdded;
-        internal static string SellingExpenseDeleted;
-        internal static string SellingExpenseUpdated;
-        internal static string SellingExpenseListed;
+        public static string SellingExpenseAdded;
+        public static string SellingExpenseDeleted;
+        public static string SellingExpenseUpdated;
+        public static string SellingExpenseListed;
 
 
-        internal static string ServicePurchaseAdded;
-        internal static string ServicePurchaseDeleted;
-        internal static string ServicePurchaseUpdated;
-        internal static string ServicePurchaseListed;
+        public static string ServicePurchaseAdded;
+        public static string ServicePurchaseDeleted;
+        public static string ServicePurchaseUpdated;
+        public static string ServicePurchaseListed;
 
 
-        internal static string ServiceReceiveAdded;
-        internal static string ServiceReceiveDeleted;
-        internal static string ServiceReceiveUpdated;
-        internal static string ServiceReceiveListed;
+        public static string ServiceReceiveAdded;
+        public static string ServiceReceiveDeleted;
+        public static string ServiceReceiveUpdated;
+        public static string ServiceReceiveListed;
 
 
-        internal static string ServiceSalesAdded;
-        internal static string ServiceSalesDeleted;
-        internal static string ServiceSalesUpdated;
-        internal static string ServiceSalesListed;
+        public static string ServiceSalesAdded;
+        public static string ServiceSalesDeleted;
+        public static string ServiceSalesUpdated;
+        public static string ServiceSalesListed;
 
 
-        internal static string ShippingAdressAdded;
-        internal static string ShippingAdressDeleted;
-        internal static string ShippingAdressUpdated;
-        internal static string ShippingAdressListed;
+        public static string ShippingAdressAdded;
+        public static string ShippingAdressDeleted;
+        public static string ShippingAdressUpdated;
+        public static string ShippingAdressListed;
 
 
-        internal static string SpecialPlugAdded;
-        internal static string SpecialPlugDeleted;
-        internal static string SpecialPlugUpdated;
-        internal static string SpecialPlugListed;
+        public static string SpecialPlugAdded;
+        public static string SpecialPlugDeleted;
+        public static string SpecialPlugUpdated;
+        public static string SpecialPlugListed;
 
 
-        internal static string TakenInterestRateAdded;
-        internal static string TakenInterestRateDeleted;
-        internal static string TakenInterestRateUpdated;
-        internal static string TakenInterestRateListed;
+        public static string TakenInterestRateAdded;
+        public static string TakenInterestRateDeleted;
+        public static string TakenInterestRateUpdated;
+        public static string TakenInterestRateListed;
 
 
-        internal static string TakenSelfEmploymentReceiptAdded;
-        internal static string TakenSelfEmploymentReceiptDeleted;
-        internal static string TakenSelfEmploymentReceiptUpdated;
-        internal static string TakenSelfEmploymentReceiptListed;
+        public static string TakenSelfEmploymentReceiptAdded;
+        public static string TakenSelfEmploymentReceiptDeleted;
+        public static string TakenSelfEmploymentReceiptUpdated;
+        public static string TakenSelfEmploymentReceiptListed;
 
 
-        internal static string TaxAdministrationAdded;
-        internal static string TaxAdministrationDeleted;
-        internal static string TaxAdministrationUpdated;
-        internal static string TaxAdministrationListed;
+        public static string TaxAdministrationAdded;
+        public static string TaxAdministrationDeleted;
+        public static string TaxAdministrationUpdated;
+        public static string TaxAdministrationListed;
 
 
-        internal static string UnitSetAdded;
-        internal static string UnitSetDeleted;
-        internal static string UnitSetUpdated;
-        internal static string UnitSetListed;
+        public static string UnitSetAdded;
+        public static string UnitSetDeleted;
+        public static string UnitSetUpdated;
+        public static string UnitSetListed;
 
 
-        internal static string VirmanPlugAdded;
-        internal static string VirmanPlugDeleted;
-        internal static string VirmanPlugUpdated;
-        internal static string MaterialVirmanPlugListed;
+        public static string VirmanPlugAdded;
+        public static string VirmanPlugDeleted;
+        public static string VirmanPlugUpdated;
+        public static string MaterialVirmanPlugListed;
 
 
-        internal static string UserRegistered;
-        internal static string UserNotFound;
-        internal static string PasswordError;
-        internal static string SuccessfulLogin;
-        internal static string UserAlreadyExists;
-        internal static string AccessTokenCreated;
-        internal static string PasswordChanged;
-        internal static string AuthorizationDenied;
+        public static string UserRegistered="Kayıt başarılı bir şekilde yapıldı";
+        public static string UserNotFound;
+        public static string PasswordError;
+        public static string SuccessfulLogin="Giriş Başarılı , Hoşgeldiniz";
+        public static string UserAlreadyExists;
+        public static string AccessTokenCreated="Token Oluşturuldu";
+        public static string PasswordChanged;
+        public static string AuthorizationDenied;
+        public static string UsersListed;
+        public static string UserListed;
+        public static string UserNotExist;
+        public static string UserAdded;
+        public static string UserUpdated;
+        public static string UserDeleted;
+        public static string UserEmailExist;
+        public static string UserEmailNotAvailable;
     }
 }

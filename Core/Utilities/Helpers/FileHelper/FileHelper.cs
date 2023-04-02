@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IResult = Core.Utilities.Result.Abstract.IResult;
 
 namespace Core.Utilities.Helpers.FileHelper
 {
