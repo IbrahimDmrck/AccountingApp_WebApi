@@ -20,14 +20,14 @@ namespace WebAPI.Controllers
         [HttpPost("login")]
         public async Task<ActionResult> Login(UserForLoginDto userForLoginDto)
         {
-            
-            var userToLogin = _authService.Login(userForLoginDto);
+
+            var userToLogin = await _authService.Login(userForLoginDto);
             if (!userToLogin.Success)
             {
                 return BadRequest(userToLogin);
             }
 
-            var result = _authService.CreateAccessToken(userToLogin.Data);
+            var result =await _authService.CreateAccessToken(userToLogin.Data);
             if (result.Success)
             {
                 return Ok(result);
@@ -46,7 +46,7 @@ namespace WebAPI.Controllers
             }
 
             var registerResult = _authService.Register(userForRegisterDto, userForRegisterDto.Password);
-            var result = _authService.CreateAccessToken(registerResult.Data);
+            var result =await _authService.CreateAccessToken(registerResult.Data);
             if (result.Success)
             {
                 return Ok(result);
@@ -58,7 +58,7 @@ namespace WebAPI.Controllers
         [HttpPost("changepassword")]
         public async Task<ActionResult> ChangePassword(ChangePasswordModel updatedUser)
         {
-            var result = _authService.ChangePassword(updatedUser);
+            var result =await _authService.ChangePassword(updatedUser);
             if (result.Success)
             {
                 return Ok(result);

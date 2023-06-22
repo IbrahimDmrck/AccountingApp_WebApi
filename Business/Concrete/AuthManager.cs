@@ -46,7 +46,7 @@ namespace Business.Concrete
         }
 
       //  [ValidationAspect(typeof(UserForLoginDtoValidator))]
-        public IDataResult<User> Login(UserForLoginDto userForLoginDto)
+        public async Task< IDataResult<User> > Login(UserForLoginDto userForLoginDto)
         {
             var userToCheck = _userService.GetUserByMail(userForLoginDto.Email);
             if (userToCheck.Data == null)
@@ -71,22 +71,22 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
-        public IDataResult<AccessToken> CreateAccessToken(User user)
+        public async Task< IDataResult<AccessToken>> CreateAccessToken(User user)
         {
             var claims = _userService.GetClaims(user);
-            var accessToken = _tokenHelper.CreateToken(user, claims.Data);
-            return new SuccessDataResult<AccessToken>(accessToken, Messages.AccessTokenCreated);
+            var accessToken =  _tokenHelper.CreateToken(user, claims.Data);
+            return  new SuccessDataResult<AccessToken>(accessToken, user.FirstName);
         }
 
       //  [ValidationAspect(typeof(ChangePasswordValidator))]
-        public IResult ChangePassword(ChangePasswordModel updatedUser)
+        public async Task< IResult> ChangePassword(ChangePasswordModel updatedUser)
         {
             UserForLoginDto checkedUser = new UserForLoginDto
             {
                 Email = updatedUser.Email,
                 Password = updatedUser.OldPassword
             };
-            var loginResult = Login(checkedUser);
+            var loginResult =await Login(checkedUser);
             if (loginResult.Success)
             {
                 var user = loginResult.Data;
