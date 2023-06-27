@@ -41,7 +41,7 @@ builder.Services.AddDependencyResolvers(new ICoreModule[]
 
 
 // Add services to the container.
-
+//builder.Services.AddScoped(sp => new HttpClient { });
 builder.Services.AddControllers();
 //builder.Services.AddCors();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

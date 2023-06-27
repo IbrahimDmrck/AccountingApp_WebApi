@@ -46,9 +46,9 @@ namespace Business.Concrete
         }
 
       //  [ValidationAspect(typeof(UserForLoginDtoValidator))]
-        public async Task< IDataResult<User> > Login(UserForLoginDto userForLoginDto)
+        public async Task<IDataResult<User>> Login(UserForLoginDto userForLoginDto)
         {
-            var userToCheck = _userService.GetUserByMail(userForLoginDto.Email);
+            var userToCheck = await _userService.GetUserByMail(userForLoginDto.Email);
             if (userToCheck.Data == null)
             {
                 return new ErrorDataResult<User>(Messages.UserNotFound);
@@ -61,10 +61,11 @@ namespace Business.Concrete
 
             return new SuccessDataResult<User>(userToCheck.Data, Messages.SuccessfulLogin);
         }
-
-        public IResult UserExists(string email)
+        //
+        public async Task <IResult> UserExists(string email)
         {
-            if (_userService.GetUserByMail(email).Data != null)
+            var check = await _userService.GetUserByMail(email);
+            if (check.Data != null)
             {
                 return new ErrorResult(Messages.UserAlreadyExists);
             }

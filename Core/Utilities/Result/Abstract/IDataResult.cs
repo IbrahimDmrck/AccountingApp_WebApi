@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Core.Utilities.Result.Abstract
 {
-    public interface IDataResult<T>:IResult
+    public interface  IDataResult<T>:IResult
     {
-        T Data { get; }
+      T Data { get; }
     }
 }
