@@ -89,11 +89,7 @@ if (app.Environment.IsDevelopment())
 
 app.ConfigureCustomExceptionMiddleware();
 
-//app.UseCors(opt => opt
-//          .AllowAnyMethod()
-//          .AllowAnyHeader()
-//          .SetIsOriginAllowed(origin => true)
-//          .AllowCredentials());
+//app.UseCors(builder => builder.WithOrigins("http://127.0.0.1:7188").AllowAnyHeader());
 
 app.UseHttpsRedirection();
 
